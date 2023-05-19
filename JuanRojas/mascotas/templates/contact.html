@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/logo pet.png'%}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <title>Contacto</title>
+</head>
+
+<body>
+    <div class="container-fluid px-0 overflow-hidden">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" title="menu" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index'%}">
+                <img src="{% static 'img/logo pet.png'%}" width="30px" height="30px" alt="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="opciones">
+                <ul class="navbar-nav">
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'index'%}">Home</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'about'%}">Sobre nosotras</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'gallery'%}">Galería</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'contact'%}">Contacto</a></h3>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Contacto</h1>
+        </header>
+
+        <div class="container">
+            <form action="#" id="contacto" method="post">
+                <div class="form-group col-md">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nom" name="nombre" class="form-control" placeholder="Ingrese su nombre"
+                        minlength="2" maxlength="50" required>
+                </div>
+                <div class="form-group col-md">
+                    <label for="edad">Edad</label>
+                    <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingrese su edad"
+                        min="16" max="120" required>
+                </div>
+                <div class="form-group col-md">
+                    <label for="genero">Género</label>
+                    <select class="form-control" name="genero" title="genero" id="gen" required>
+                        <option value="">Seleccione su género</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        <option value="3">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group col-md">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su email"
+                        required>
+                </div>
+                <div class="form-group col-md">
+                    <label for="telefono">Teléfono</label>
+                    <input type="number" id="tel" name="telefono" class="form-control" placeholder="Ingrese su teléfono"
+                        minlength="8" maxlength="11" required>
+                </div>
+                <div class="form-group col-md">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="men" cols="30" rows="5" class="form-control"
+                        placeholder="Ingrese su mensaje" minlength="10" maxlength="1000" required></textarea>
+                </div>
+                <input type="button" value="Enviar" class="btn btn-primary m-3" id="send" onclick="Enviar()">
+                <input type="reset" value="Limpiar" class="btn btn-secondary m-3" id="clear" onclick="Limpiar()">
+
+            </form>
+        </div>
+
+        <footer>
+
+            <div class="row p-3">
+                <div class="col-md">
+                    <img src="{% static 'img/logo pet.png'%}" alt="logoPet" width="60px">
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'index'%}">
+                        <h1><strong>Home</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'about'%}">
+                        <h1><strong>About us</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'gallery'%}">
+                        <h1><strong>Galería</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md mb-2">
+                    <a href="{% url 'contact'%}">
+                        <h1><strong>Contacto</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <h1><strong>Síguenos</strong></h1>
+                    <br>
+                    <div class="row">
+                        <img src="{% static 'img/icons8-facebook.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <img src="{% static 'img/icons8-twitter.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <img src="{% static 'img/icons8-instagram.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <br>
+                    </div>
+                    <br>
+                    <p>@Petopia Derechos reservados</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'js/scriptcontact.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
