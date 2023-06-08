@@ -31,4 +31,4 @@ def create(request):
             return redirect("create")
     else:
         productoform = productoForm()
-    return render(request, "crear.html", {"producto_form": productoform})
+    return render(request, "create.html", {"producto_form": productoform})
