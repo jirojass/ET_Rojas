@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../eg/MyWebJunio06"
 		}
 	],
 	"settings": {}

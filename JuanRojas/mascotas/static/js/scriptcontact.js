@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
   $("#contacto").validate({
     rules: {
       nom: {
@@ -77,35 +77,35 @@ function Enviar() {
 function Limpiar() {
   alert("Formulario limpiado");
 }
+$(document).ready(function () {
+  var button1 = document.querySelector(".btn-primary");
+  var button2 = document.querySelector(".btn-secondary");
 
-var button1 = document.querySelector(".btn-primary");
-var button2 = document.querySelector(".btn-secondary");
+  button1.addEventListener("mouseenter", function () {
+    button1.style.width = "110px";
+    button1.style.height = "50px";
+    button1.style.backgroundColor = "#9a92ce";
+    button1.style.borderColor = "#9a92ce";
+  });
 
-button1.addEventListener("mouseenter", function () {
-  button1.style.width = "110px";
-  button1.style.height = "50px";
-  button1.style.backgroundColor = "#9a92ce";
-  button1.style.borderColor = "#9a92ce";
+  button1.addEventListener("mouseleave", function () {
+    button1.style.width = "100px";
+    button1.style.height = "40px";
+    button1.style.backgroundColor = "#aba2e5";
+    button1.style.borderColor = "#aba2e5";
+  });
 
-});
+  button2.addEventListener("mouseenter", function () {
+    button2.style.width = "110px";
+    button2.style.height = "50px";
+    button2.style.backgroundColor = "#ce9295";
+    button2.style.borderColor = "#ce9295";
+  });
 
-button1.addEventListener("mouseleave", function () {
-  button1.style.width = "100px";
-  button1.style.height = "40px";
-  button1.style.backgroundColor = "#aba2e5";
-  button1.style.borderColor = "#aba2e5";
-});
-
-button2.addEventListener("mouseenter", function () {
-  button2.style.width = "110px";
-  button2.style.height = "50px";
-  button2.style.backgroundColor = "#ce9295";
-  button2.style.borderColor = "#ce9295";
-});
-
-button2.addEventListener("mouseleave", function () {
-  button2.style.width = "100px";
-  button2.style.height = "40px";
-  button2.style.backgroundColor = "#e5a2a6";
-  button2.style.borderColor = "#e5a2a6";
+  button2.addEventListener("mouseleave", function () {
+    button2.style.width = "100px";
+    button2.style.height = "40px";
+    button2.style.backgroundColor = "#e5a2a6";
+    button2.style.borderColor = "#e5a2a6";
+  });
 });

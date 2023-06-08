@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{% static 'img/logo pet.png'%}" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
     <title>Contacto</title>
 </head>
 
@@ -46,20 +47,25 @@
         </header>
 
         <div class="container">
-            <form action="#" id="contacto" method="post">
+            <form id="contacto" method="post">
                 <div class="form-group col-md">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nom" name="nombre" class="form-control" placeholder="Ingrese su nombre"
-                        minlength="2" maxlength="50" required>
+                        minlength="2" maxlength="50" required data-msg-required="Ingrese su nombre"
+                        data-msg-minlength="Caracteres insuficientes (2)"
+                        data-msg-maxlength="Caracteres excedidos (20)">
                 </div>
                 <div class="form-group col-md">
                     <label for="edad">Edad</label>
                     <input type="number" id="edad" name="edad" class="form-control" placeholder="Ingrese su edad"
-                        min="16" max="120" required>
+                        min="16" max="120" required data-msg-required="Ingrese su edad"
+                        data-msg-number="Formato incorrecto" data-msg-min="Edad minima 16"
+                        data-msg-max="Edad maxima 120">
                 </div>
                 <div class="form-group col-md">
                     <label for="genero">Género</label>
-                    <select class="form-control" name="genero" title="genero" id="gen" required>
+                    <select class="form-control" name="genero" title="genero" id="gen" required
+                        data-msg-required="Ingrese su genero">
                         <option value="">Seleccione su género</option>
                         <option value="1">Masculino</option>
                         <option value="2">Femenino</option>
@@ -69,22 +75,27 @@
                 <div class="form-group col-md">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="Ingrese su email"
-                        required>
+                        required data-msg-required="Ingrese un correo valido" data-msg-email="Formato incorrecto">
                 </div>
                 <div class="form-group col-md">
                     <label for="telefono">Teléfono</label>
                     <input type="number" id="tel" name="telefono" class="form-control" placeholder="Ingrese su teléfono"
-                        minlength="8" maxlength="11" required>
+                        minlength="8" maxlength="11" required data-msg-required="Ingrese un numero de telefono"
+                        data-msg-number="Formato incorrecto" data-msg-minlength="Caracteres insuficientes (8)"
+                        data-msg-maxlength="Caracteres excedidos (11)">
                 </div>
                 <div class="form-group col-md">
                     <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" id="men" cols="30" rows="5" class="form-control"
-                        placeholder="Ingrese su mensaje" minlength="10" maxlength="1000" required></textarea>
+                    <textarea name="mensaje" id="men" cols="30 " rows="5 " class="form-control "
+                        placeholder="Ingrese su mensaje " minlength="10 " maxlength="1000 " required
+                        data-msg-required="Debe ingresar un mensaje" data-msg-minlength="Caracteres insuficientes (10)"
+                        data-msg-maxlength="Caracteres excedidos (1000)"></textarea>
                 </div>
                 <input type="button" value="Enviar" class="btn btn-primary m-3" id="send" onclick="Enviar()">
                 <input type="reset" value="Limpiar" class="btn btn-secondary m-3" id="clear" onclick="Limpiar()">
 
             </form>
+
         </div>
 
         <footer>
@@ -131,10 +142,9 @@
             </div>
         </footer>
     </div>
-    <script src="{% static 'js/scriptcontact.js'%}"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/scriptcontact.js' %}">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
