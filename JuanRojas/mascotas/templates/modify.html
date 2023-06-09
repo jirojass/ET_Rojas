@@ -1,16 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar productos</title>
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    {% load static %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/scriptmodify.js' %}"></script>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h2>Creando Productos</h2>
+        <form method="POST" id="formulario" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.idProducto.label}}
+                </label>
+                {{ form.idProducto }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.nombreProducto.label}}
+                </label>
+                {{ form.nombreProducto }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.descripcionProducto.label}}
+                </label>
+                {{ form.descripcionProducto }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.precioProducto.label}}
+                </label>
+                {{ form.precioProducto }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.categoriaProducto.label}}
+                </label>
+                {{ form.categoriaProducto }}
+            </div>
+
+            <div class="row">
+                <label for="{{ form.field.name }}">
+                    {{form.imagenProducto.label}}
+                </label>
+                {{ form.imagenProducto }}
+            </div>
+
+
+            <br><br>
+            {% if user.is_authenticated %}
+            <input type="submit" class="btn btn-primary" value="Modificar">
+            {% else %}
+            <input type="submit" class="btn btn-primary" value="Modificar" disabled>
+            {% endif %}
+            <a href="{% url 'index' %}" class="btn btn-success">Inicio</a>
+        </form>
+    </div>
 </body>
+
 </html>

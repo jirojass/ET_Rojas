@@ -63,7 +63,11 @@
 
 
             <br><br>
+            {% if user.is_authenticated %}
             <input type="submit" class="btn btn-primary" value="Enviar">
+            {% else %}
+            <input type="#" class="btn btn-secondary disabled" value="Enviar" disabled>
+            {% endif %}
             <a href="{% url 'index' %}" class="btn btn-success">Inicio</a>
         </form>
     </div>

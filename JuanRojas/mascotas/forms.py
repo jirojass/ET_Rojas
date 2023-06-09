@@ -22,11 +22,12 @@ class productoForm(forms.ModelForm):
             "categoriaProducto": "Categoria de producto",
         }
         widgets = {
-            "idProducto": forms.TextInput(
+            "idProducto": forms.NumberInput(
                 attrs={
                     "placeholder": "Ingrese ID de producto..",
                     "id": "idProducto",
                     "class": "form-control",
+                    "data-msg-number": "Formato incorrecto",
                 }
             ),
             "nombreProducto": forms.TextInput(
@@ -43,7 +44,7 @@ class productoForm(forms.ModelForm):
                     "class": "form-control",
                 }
             ),
-            "precioProducto": forms.TextInput(
+            "precioProducto": forms.NumberInput(
                 attrs={
                     "placeholder": "Ingrese precio de producto..",
                     "id": "precioProducto",
