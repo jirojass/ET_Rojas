@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es-cl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/logo pet.png'%}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>About</title>
+</head>
+
+<body>
+    <div class="container-fluid px-0 overflow-hidden">
+        
+
+        <header>
+            <h1>About us</h1>
+        </header>
+
+        <div class="container-fluid px-5">
+            <div class="row gx-5 align-items-center ">
+                <div class="col-lg-6 order-lg-2 ">
+                    <div class="p-5 fade-in-slide"><img class="img-fluid img-border rounded-circle"
+                            src="{% static 'img/pexels-barnabas-davoti-11702792.jpg' %}" alt="..."></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4 fade-in-slide">Misión</h2>
+                        <p class="fade-in-slide">La misión de nuestra organización es ofrecer productos de calidad y
+                            diseño para mascotas, que
+                            contribuyan al bienestar de los animales y al apoyo de una fundación sin fines de lucro que
+                            se dedica a la protección y rescate de perros y gatos abandonados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-5 ">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-5 fade-in-slide"><img class="img-fluid img-border rounded-circle"
+                            src="{% static 'img/pexels-francesco-ungaro-7211201.jpg' %}" alt="..."></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4 fade-in-slide">Visión</h2>
+                        <p class="fade-in-slide">La visión de nuestra organización es ser un referente en el mercado de
+                            accesorios para
+                            mascotas, que se distinga por su compromiso social y ambiental, y que cuente con una
+                            plataforma web que facilite la compra y el despacho de nuestros productos a nuestros
+                            clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5 fade-in-slide"><img class="img-fluid img-border rounded-circle"
+                            src="{% static 'img/pexels-dominika-roseclay-4076339.jpg' %}" alt="..."></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4 fade-in-slide">Objetivos</h2>
+                        <p class="fade-in-slide">Nuestros objetivos son: aumentar nuestras ventas y nuestra capacidad de
+                            producción, optimizar
+                            nuestros procesos internos y externos, mejorar nuestra gestión financiera y contable,
+                            fortalecer nuestra relación con la fundación sin fines de lucro y con nuestros proveedores,
+                            y fidelizar a nuestros clientes mediante una atención personalizada y una entrega rápida y
+                            segura.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col d-flex mx-auto justify-content-center ">
+                <iframe class="fade-in-slide" width="560" height="315"
+                    src="https://www.youtube.com/embed/tMH_3Hq3Bzo?controls=0" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/scriptabout.js'%}"></script>
+</body>
+
+</html>
+{% endblock %}

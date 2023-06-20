@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/logo pet.png'%}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid px-0 overflow-hidden">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" title="menu" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index'%}">
+                <img src="{% static 'img/logo pet.png'%}" width="30px" height="30px" alt="logo">
+            </a>
+            <div class="collapse navbar-collapse" id="opciones">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'index'%}">Home</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'about'%}">Sobre nosotras</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'gallery'%}">Galería</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="{% url 'contact'%}">Contacto</a></h3>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item ml-2 mr-5">
+                        <h3><a class="nav-link" href="{% url 'list' %}">Productos</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a></h3>
+                    </li>
+                    {% else %}
+                    <li class="nav-item ml-2 mr-5">
+                        <h3><a class="nav-link" href="{% url 'products' %}">Productos</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link ml-auto" href="{% url 'registrar' %}">Registrarse</a></h3>
+                    </li>
+                    {% endif %}
+
+                </ul>
+
+                <div>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" id="userPetopia">
+                        <img src="{% static 'img/user-vector-icon.png' %}" alt="userPetopia" width="20px"
+                            class="m-1">Cerrar sesión
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}" id="userPetopia">
+                        <img src="{% static 'img/user-vector-icon.png' %}" alt="userPetopia" width="20px"
+                            class="m-1">Iniciar sesión
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+
+
+        {% block content %}
+
+        {% endblock %}
+
+        <footer>
+
+            <div class="row p-3">
+                <div class="col-md">
+                    <img src="{% static 'img/logo pet.png'%}" alt="logoPet" width="60px">
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'index'%}">
+                        <h1><strong>Home</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'about'%}">
+                        <h1><strong>About us</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'gallery'%}">
+                        <h1><strong>Galería</strong></h1>
+                    </a>
+                </div>
+                <div class="col-md">
+                    <a href="{% url 'contact'%}">
+                        <h1><strong>Contacto</strong></h1>
+                    </a>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="col-md mb-2">
+                    <a href="{% url 'list'%}">
+                        <h1><strong>Productos</strong></h1>
+                    </a>
+                </div>
+                {% else %}
+                <div class="col-md mb-2">
+                    <a href="{% url 'products'%}">
+                        <h1><strong>Productos</strong></h1>
+                    </a>
+                </div>
+                {% endif %}
+                <div class="col-md">
+                    <h1><strong>Síguenos</strong></h1>
+                    <br>
+                    <div class="row">
+                        <img src="{% static 'img/icons8-facebook.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <img src="{% static 'img/icons8-twitter.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <img src="{% static 'img/icons8-instagram.svg'%}" alt="" width="30px" height="30px"
+                            class="col-auto">
+                        <br>
+                    </div>
+                    <br>
+                    <p>@Petopia Derechos reservados</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

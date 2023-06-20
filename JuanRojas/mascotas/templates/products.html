@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/logo pet.png'%}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Vehiculos</h2><br>
+
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-12 col-md-4">
+                <div class="card text-center">
+                    {% if producto.imagenProducto %}
+                    <img src="{{ producto.imagenProducto.url }}" class="card-img-top mx-auto">
+                    {% else %}
+                    <img src="{% static 'img/sinfoto.webp' %}" class="card-img-top mx-auto">
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">
+                             {{ producto.nombreProducto }}
+                        </h4>
+                        <p class="card-text">
+                            Descripción: {{ producto.descripcionProducto }}<br>
+                            Precio: {{ producto.precioProducto }}<br>
+                        </p>
+                        <!-- <a href="{% url 'index' %}" class="btn btn-success">Inicio</a>
+                        <a href="{% url 'login' %}" class="btn btn-warning">Login</a> -->
+
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}
