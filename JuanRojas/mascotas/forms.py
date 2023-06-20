@@ -1,5 +1,20 @@
 from django import forms
 from .models import Producto
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+
+class RegistroUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "password1",
+            "password2",
+        ]
 
 
 class productoForm(forms.ModelForm):
@@ -10,6 +25,7 @@ class productoForm(forms.ModelForm):
             "nombreProducto",
             "descripcionProducto",
             "precioProducto",
+            "stockProducto",
             "imagenProducto",
             "categoriaProducto",
         ]
@@ -18,6 +34,7 @@ class productoForm(forms.ModelForm):
             "nombreProducto": "Nombre de producto",
             "descripcionProducto": "Descripcion de producto",
             "precioProducto": "Precio de producto",
+            "stockProducto": "Stock de producto",
             "imagenProducto": "Imagen de producto",
             "categoriaProducto": "Categoria de producto",
         }
@@ -48,6 +65,13 @@ class productoForm(forms.ModelForm):
                 attrs={
                     "placeholder": "Ingrese precio de producto..",
                     "id": "precioProducto",
+                    "class": "form-control",
+                }
+            ),
+            "stockProducto": forms.NumberInput(
+                attrs={
+                    "placeholder": "Ingrese stock de producto..",
+                    "id": "stockProducto",
                     "class": "form-control",
                 }
             ),

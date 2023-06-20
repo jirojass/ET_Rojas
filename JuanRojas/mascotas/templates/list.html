@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +24,7 @@
                     <th>Nombre</th>
                     <th>Descripcion</th>
                     <th>Precio</th>
+                    <th>Stock</th>
                     <th>Categoria</th>
                     <th>Imagen</th>
                     <th>Modificar</th>
@@ -35,6 +38,7 @@
                     <td>{{ producto.nombreProducto }}</td>
                     <td>{{ producto.descripcionProducto }}</td>
                     <td>{{ producto.precioProducto }}</td>
+                    <td>{{ producto.stockProducto }}</td>
                     <td>{{ producto.categoriaProducto }}</td>
 
                     {% if producto.imagenProducto %}
@@ -59,6 +63,7 @@
         {% else %}
         <a class="btn btn-secondary disabled" aria-disabled="true">Crear</a>
         {% endif %}
+        <a href="{% url 'index' %}" class="btn btn-secondary">Ir a inicio</a>
     </div>
 </body>
 

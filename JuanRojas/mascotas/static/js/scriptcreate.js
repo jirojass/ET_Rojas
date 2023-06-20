@@ -5,8 +5,8 @@ $(function () {
       nombreProducto: "required",
       descripcionProducto: "required",
       precioProducto: {"required": true, "number": true, "min": 0},
+      stockProducto: {"required": true, "number": true, "min": 0},
       categoriaProducto: "required",
-      imagenProducto: {"required": true},
     },
     messages: {
       idProducto: {
@@ -23,11 +23,12 @@ $(function () {
         required: "Ingrese el precio del producto",
         number: "Formato incorrecto",
       },
+      stockProducto: {
+        required: "Ingrese el stock del producto",
+        number: "Formato incorrecto",
+      },
       categoriaProducto: {
         required: "Ingrese la categoria del producto",
-      },
-      imagenProducto: {
-        required: "Ingrese la imagen del producto",
       },
     },
   });

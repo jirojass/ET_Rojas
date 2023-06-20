@@ -1,3 +1,5 @@
+//on page load
+$(document).ready(function(){
 function fadeInSlideOnScroll() {
     var elements = document.querySelectorAll('.fade-in-slide');
   
@@ -34,3 +36,4 @@ function fadeInSlideOnScroll() {
   
   fadeInSlideOnScroll();
   
+  });
