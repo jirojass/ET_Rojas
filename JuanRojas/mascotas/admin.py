@@ -5,3 +5,5 @@ from . import models
 
 admin.site.register(models.Producto)
 admin.site.register(models.categoriaProducto)
+admin.site.register(models.Boleta)
+admin.site.register(models.DetalleBoleta)

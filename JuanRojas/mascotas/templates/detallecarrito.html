@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle boleta</title>
+    {% load static %}
+</head>
+
+<body>
+    <div class="container-fluid overflow-hidden" style="margin-top: 80px; margin-bottom: 740px">
+        <h3> Detalle de Compra </h3><br>
+        <h6>Fecha: {{ fecha }}</h6>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código Boleta</th>
+                    <th>Código Producto</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in productos %}
+                <tr>
+                    <td>{{ prod.idBoleta|stringformat:"s" }}</td>
+                    <td>{{ prod.idProducto }}</td>
+                    <td>{{ prod.cantidad }}</td>
+                    <td>{{ prod.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tr>
+                <td>
+                    <h6>IVA: {{ iva }}</h6>
+                </td>
+            <tr>
+
+            <tr>
+                <td>
+                    <h6>Envío: {{ envio }}</h6>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h4>Total Compra: {{ total }}</h4>
+                </td>
+            </tr>
+
+            <td>
+                <h6>Estado del pedido: {{ estado }}</h6>
+            </td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+{% endblock %}

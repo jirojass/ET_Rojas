@@ -34,9 +34,16 @@
                     <li class="nav-item ml-2">
                         <h3><a class="nav-link" href="{% url 'contact'%}">Contacto</a></h3>
                     </li>
-                    {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
                     <li class="nav-item ml-2 mr-5">
                         <h3><a class="nav-link" href="{% url 'list' %}">Productos</a></h3>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <h3><a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a></h3>
+                    </li>
+                    {% elif user.is_authenticated%}
+                    <li class="nav-item ml-2 mr-5">
+                        <h3><a class="nav-link" href="{% url 'products' %}">Productos</a></h3>
                     </li>
                     <li class="nav-item ml-2">
                         <h3><a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a></h3>
