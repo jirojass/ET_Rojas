@@ -7,3 +7,8 @@ Contraseña: 1234
 ### Las credenciales del usuario son:  
 Nombre de usuario: user  
 Contraseña: duocuser  
+
+### Dependencias
+pip install bootstrap3
+pip install django-crispy-forms
+pip install pillow
