@@ -9,6 +9,6 @@ Nombre de usuario: user
 Contraseña: duocuser  
 
 ### Dependencias
-pip install bootstrap3
-pip install django-crispy-forms
-pip install pillow
+pip install bootstrap3  
+pip install django-crispy-forms  
+pip install pillow  
